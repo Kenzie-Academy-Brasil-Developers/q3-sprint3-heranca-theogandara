@@ -1,3 +1,6 @@
+from classes.recipiente import Recipiente
+
 if __name__ == "__main__":
-    # Execute suas testagens manuais aqui
+    r = Recipiente(100, 100.00, False)
+    print(r)
     ...
