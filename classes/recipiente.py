@@ -1,18 +1,20 @@
 # Desenvolva sua classe Recipiente aqui.
 
 class Recipiente:
-    def __init__(self, tamanho: float, conteudo: float, limpo: bool) -> None:
-        self.tamanho = tamanho
-        if tamanho < 0:
-            self.tamanho = 0
-        self.conteudo = conteudo
+    def __init__(self, tamanho: float) -> None:
+        self.conteudo = float(0)
         self.limpo = True
+        self.tamanho = float(tamanho) if tamanho > 0 else float(0)
 
     def esvaziar(self) -> None:
-        self.conteudo = 0
+        self.conteudo = float(0)
+
+    def lavar(self):
+        self.conteudo = float(0)
+        self.limpo = True
 
     def esta_vazio(self) -> bool:
-        if self.conteudo <= 0:
+        if self.conteudo == 0:
             return True
         else:
             return False
@@ -33,15 +35,9 @@ class Recipiente:
         self.limpo = False
 
     def __repr__(self) -> str:
-        self.estado = "sujo"
-        if self.limpo:
-            self.estado = "limpo"
-
-        return f"Um recipiente <{self.estado}> não especificado"
+        
+        return f"Um recipiente {self.estado()} não especificado"
 
     def __str__(self) -> str:
-        self.estado = "sujo"
-        if self.limpo:
-            self.estado = "limpo"
-
-        return f"Um recipiente <{self.estado}> não especificado"
+        
+        return f"Um recipiente {self.estado()} não especificado"
